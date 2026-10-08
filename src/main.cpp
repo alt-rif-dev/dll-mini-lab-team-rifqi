@@ -21,10 +21,10 @@ void displayList(Node* head){
         cout << current->data;
         if (current->next != nullptr) {
             cout << " <-> ";
-            current = current->next;
         }
-        cout << endl;
+        current = current->next;
     }
+    cout << endl;
 }
 
 int main(){

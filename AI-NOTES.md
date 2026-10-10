@@ -3,7 +3,7 @@
 ### Prompt
 
 ```
-gsaya sebagai builder tasknya task 7-9 , disuruh ngapain aja
+saya sebagai builder tasknya task 7-9 , disuruh ngapain aja
 ```
 
 ### AI helped us with

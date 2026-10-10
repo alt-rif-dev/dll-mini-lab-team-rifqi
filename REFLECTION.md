@@ -1,21 +1,28 @@
-Name: Rifqi Bhadrika Adwitiya
+Individual Reflection
 
-My main contribution: Sebagai Builder di Task 1-2, saya membuat repository tim, menyiapkan struktur folder, menulis README.md, lalu membuat struct Node, fungsi createNode(), membangun list 5 node (Song A sampai Song E), dan menulis displayList(). Saya juga membuka Issue #1 dan Pull Request #2, serta menyelesaikan merge conflict pada README.md.
+Name: Muhammad Dzaki Lukmanul Hakim
 
-What I learned about next and prev: next menunjuk ke node sesudahnya dan dipakai untuk bergerak maju, sedangkan prev menunjuk ke node sebelumnya dan dipakai untuk bergerak mundur. Saat menyambung dua node, kedua pointer harus diisi: a->next = b dan b->prev = a. Kalau salah satunya terlupa, traversal di satu arah akan putus. Node pertama punya prev = nullptr dan node terakhir punya next = nullptr, dan nilai nullptr itulah yang menghentikan loop traversal.
+My main contribution:
+Sebagai Builder di Task 3-4, saya bertanggung jawab mengimplementasikan logika penelusuran dua arah (Forward dan Backward Traversal) pada repositori tim. Saya menulis fungsi utama untuk mencetak list dari depan ke belakang (`Song A` sampai `Song E`) menggunakan pointer `next` dan fungsi kustom tambahan untuk mencetak secara terbalik dari belakang ke depan menggunakan pointer `prev`.
 
-The hardest part: Bug pada displayList(): program tidak pernah berhenti. Awalnya saya tidak tahu penyebabnya, karena program terlihat benar. Setelah ditelusuri putaran demi putaran, ternyata current = current->next berada di dalam if, sehingga di node terakhir current tidak pernah berpindah ke nullptr. Bagian lain yang sulit adalah merge conflict di README.md, karena baru pertama kali menyelesaikannya.
+**What I learned about next and prev:** 
+Pointer `next` menunjuk ke node sesudahnya dan digunakan untuk bergerak maju (*forward*), sedangkan pointer `prev` menunjuk ke node sebelumnya untuk bergerak mundur (*backward*). Saya belajar bahwa penelusuran mundur hanya bisa berhasil jika pointer `prev` pada setiap node sudah terhubung dengan benar. Proses iterasi/looping pada kedua arah ini akan terus berjalan dan baru akan berhenti ketika pointer menemukan nilai `nullptr`.
 
-What AI helped me with: Claude membantu menjelaskan isi soal dalam bahasa Indonesia, menjelaskan logika node dan pointer, menemukan penyebab bug infinite loop di displayList(), serta menjelaskan alur Git (branch, Pull Request, merge conflict). Detailnya ada di AI-NOTES.md.
+**The hardest part:** 
+Bagian tersulit adalah saat mencoba berpindah ke branch kerja menggunakan terminal. Saya sempat mengalami error *fatal: a branch is expected* karena salah memasukkan jalur remote branch lengkap (`remotes/origin/...`) ke dalam perintah Git switch. Selain itu, merancang logika pemformatan tanda panah `<->` agar tercetak rapi di antara node tanpa muncul berlebih di ujung list juga membutuhkan ketelitian logika di awal.
 
-What I changed or fixed myself: Saya memperbaiki displayList() dengan memindahkan current = current->next keluar dari if dan memindahkan cout << endl ke luar while. Saya juga memperbaiki struktur folder yang awalnya tertumpuk (src/experiments/screenshots) menjadi sejajar, dan menyelesaikan conflict README.md sendiri.
+**What AI helped me with:** 
+AI membantu memberikan referensi algoritma loop bersyarat untuk membaca *Doubly Linked List* secara mundur menggunakan pointer `prev`, serta memberikan solusi instan mengenai cara kerja perintah `git switch` yang benar saat mendapati error pembacaan remote branch.
 
-GitHub Issue / PR / Commit I contributed:
+**What I changed or fixed myself:** 
+Saya memperbaiki kesalahan perintah Git secara mandiri dengan membuang teks jalur remote dan langsung menggunakan perintah `git switch [nama-branch]` yang valid. Saya juga menulis dan memodifikasi sendiri fungsi cetak tambahan (`printListFormatted`) dengan menyisipkan kondisi `if` khusus agar tampilan *output* di terminal rapi menggunakan pembatas tanda panah dua arah.
 
-Issue: #1 (Task 1-2: Create Node struct and 5 node list)
-PR: #2 (Task 1-2: Create Node and build list)
-Commit:
-add node struct and make createNode function
-add displaylist procedure and main
-fixing bug and add main.exe
-Resolve README merge conflict
+**GitHub Issue / PR / Commit I contributed:**
+*(Catatan: Sesuaikan nomor Issue/PR dan pesan commit di bawah ini dengan riwayat asli di GitHub tim Anda)*
+
+- **Issue:** #3 (Task 3-4: Implement Forward and Backward Traversal)
+- **PR:** #4 (Task 3-4: Traversal Logic and Custom Formatted Output)
+- **Commit:**
+  - `add forward and backward traversal functions`
+  - `add custom formatted output with arrows`
+  - `fix switch branch reference issue`

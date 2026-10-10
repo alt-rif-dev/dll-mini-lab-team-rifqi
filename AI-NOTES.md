@@ -1,73 +1,48 @@
-## Interaksi 1: Belajar logika Node dan Linked List
+# Task 3-4
+
+## Interaksi 1: Belajar Logika Penelusuran (Traversal)
 
 ### Prompt
 
-```
-tolong ajarin aja gimana nulis code dan logicnya biar aku paham
-```
-
 ### AI helped us with
-
-- Menjelaskan konsep node (`data`, `prev`, `next`) dan pointer
-- Menjelaskan kenapa menyambung dua node butuh dua baris (`a->next = b` dan `b->prev = a`)
-- Menjelaskan traversal dengan pointer `current` yang berpindah dari node ke node
+- Menjelaskan konsep dasar penelusuran maju (Forward Traversal) dari node pertama ke node terakhir menggunakan pointer `next`.
+- Menjelaskan konsep dasar penelusuran mundur (Backward Traversal) dari node terakhir kembali ke node pertama menggunakan pointer `prev`.
+- Memberikan logika loop conditional (`while (current != nullptr)`) untuk mengakses nilai data di setiap node.
 
 ### What we changed/tested
-
-- Menulis kodenya di `src/main.cpp` (struct `Node`, `createNode`, penyambungan 5 node, `displayList`)
-- Compile dan menjalankan program untuk memastikan list tampil dari Song A sampai Song E
+- Menulis implementasi fungsi utama penelusuran di dalam file `src/main.cpp`.
+- Melakukan compile dan menjalankan program untuk memastikan data lagu tampil berurutan dari Song A sampai Song E (untuk forward) dan dari Song E ke Song A (untuk backward).
 
 ---
 
-## Interaksi 2: Debug infinite loop pada `displayList`
+## Interaksi 2: Implementasi Fungsi Tambahan Cetak Format (Formatting Output)
 
 ### Prompt
 
-```
-kenapa ngebug ya
-```
-
-(dengan menempelkan kode `main.cpp` yang berisi fungsi `displayList`)
-
 ### AI helped us with
-
-- Menemukan penyebab bug: baris `current = current->next;` berada di dalam blok `if`, sehingga di node terakhir `current` tidak pernah berpindah ke `nullptr` dan loop berjalan terus
-- Menunjukkan bahwa `cout << endl;` di dalam loop membuat setiap node tercetak di baris berbeda
+- Memberikan logika kondisi (`if (current->next != nullptr)`) di dalam loop agar tanda panah `<->` hanya dicetak di antara node dan tidak muncul di akhir ujung list.
+- Membantu merancang fungsi tambahan `printListFormatted` agar visualisasi struktur data *Doubly Linked List* terlihat jelas di terminal.
 
 ### What we changed/tested
-
-- Memindahkan `current = current->next;` keluar dari `if` supaya selalu dieksekusi di setiap putaran
-- Memindahkan `cout << endl;` ke luar `while`
-- Compile ulang dan menjalankan program: output menjadi `Song A <-> Song B <-> Song C <-> Song D <-> Song E`
-- Commit perbaikan: `fixing bug and add main.exe`
-
-### Bagaimana kami memverifikasi hasil AI
-
-Program dijalankan ulang dan outputnya dibandingkan dengan hasil yang diminta soal. Putaran loop di node terakhir juga ditelusuri satu per satu untuk memahami kenapa versi lama tidak pernah berhenti.
+- Menambahkan fungsi cetak kustom ke dalam kode agar output terminal menampilkan format: `Song A <-> Song B <-> Song C <-> Song D <-> Song E`.
+- Menguji fungsi tersebut pada penelusuran maju maupun mundur guna memastikan pointer `prev` dan `next` benar-benar terhubung secara dua arah.
 
 ---
 
-## Interaksi 3: Alur Git dan Pull Request
+## Interaksi 3: Mengatasi Kendala Git Remote Branch
 
 ### Prompt
 
-```
-sudah ku commit dan push di branch create list, trus apa skrg
-```
-
-(dan beberapa pertanyaan lanjutan tentang struktur folder, merge conflict, dan memilih Reviewer)
-
 ### AI helped us with
-
-- Menjelaskan cara membuat struktur folder `src/`, `experiments/`, `screenshots/` dengan benar (sebelumnya folder tertumpuk)
-- Menjelaskan cara membuka Pull Request, memilih Reviewer, dan menghubungkan Issue dengan `Closes #1`
-- Menjelaskan cara menyelesaikan merge conflict pada `README.md`
-- Mengingatkan agar `main.exe` tidak ikut ter-commit (pakai `.gitignore`)
+- Menemukan penyebab error: perintah `git switch` mendeteksi argumen sebagai remote branch penuh (`remotes/origin/...`), bukan nama branch lokal yang valid.
+- Memberikan solusi perbaikan perintah menggunakan cara modern `git switch task-1-2-create-list` agar Git otomatis melacak (track) remote branch dengan nama yang sesuai di komputer lokal.
 
 ### What we changed/tested
-
-- Memperbaiki struktur folder sehingga `src`, `experiments`, dan `screenshots` sejajar
-- Menyelesaikan conflict `README.md` dan melakukan commit `Resolve README merge conflict`
-- Membuka PR #2 yang terhubung dengan Issue #1
+- Menjalankan perintah `git switch task-1-2-create-list` pada terminal repositori `dll-mini-lab-team-rifqi`.
+- Berhasil berpindah (switch) ke branch target dengan aman tanpa mengalami status *detached HEAD*.
 
 ---
+
+## Bagaimana kami memverifikasi hasil AI
+1. **Verifikasi Output Code:** Menjalankan program hasil *compile* dan mencocokkannya dengan spesifikasi soal. Output cetak terformat terbukti mempermudah pelacakan arah pointer saat melompat maju (`next`) maupun mundur (`prev`).
+2. **Verifikasi Status Git:** Menjalankan perintah `git branch` setelah mengikuti saran perbaikan perintah Git dari AI untuk memastikan posisi kerja tim sudah berada di branch yang tepat.

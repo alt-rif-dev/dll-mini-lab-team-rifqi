@@ -27,6 +27,24 @@ void displayList(Node* head){
     cout << endl;
 }
 
+void traverseForward(Node* head) {
+    cout << "Forward Traversal:" << endl;
+    Node* current = head;
+    while(current != nullptr){
+        cout << current->data << endl;
+        current = current->next;
+    }
+}
+
+void traverseBackward(Node* tail) {
+    cout << "Backward Traversal:" << endl;
+    Node* current = tail;
+    while(current != nullptr){
+        cout << current->data << endl;
+        current = current->prev;
+    }
+}
+
 int main(){
     Node* a = createNode("Song A");
     Node* b = createNode("Song B");
@@ -45,5 +63,10 @@ int main(){
 
     cout << "List: " << endl;
     displayList(a);
+    cout << endl;
+    traverseForward(a);
+    cout << endl;
+    traverseBackward(e);
+
     return 0;
 }

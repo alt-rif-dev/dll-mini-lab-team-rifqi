@@ -10,6 +10,10 @@ What AI helped me with: Claude membantu menjelaskan isi soal dalam bahasa Indone
 
 What I changed or fixed myself: Saya memperbaiki displayList() dengan memindahkan current = current->next keluar dari if dan memindahkan cout << endl ke luar while. Saya juga memperbaiki struktur folder yang awalnya tertumpuk (src/experiments/screenshots) menjadi sejajar, dan menyelesaikan conflict README.md sendiri.
 
+What happened: Sebelum diperbaiki, displayList() tidak pernah berhenti (infinite loop) saat dijalankan. Program terlihat benar sekilas, tetapi loop while terus berputar di node terakhir. Setelah current = current->next dipindah keluar dari if, list tercetak sekali dari Song A sampai Song E, lalu program berhenti normal.
+
+Why: Pada kode lama, current = current->next berada di dalam if (current->next != nullptr). Di node terakhir, next bernilai nullptr, sehingga kondisi if salah dan current tidak berpindah. Akibatnya current tidak pernah menjadi nullptr, dan kondisi while (current != nullptr) selalu benar. Setelah dipindah keluar dari if, di node terakhir current berpindah ke nullptr dan loop berhenti.
+
 GitHub Issue / PR / Commit I contributed:
 
 Issue: #1 (Task 1-2: Create Node struct and 5 node list)

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 struct Node {
@@ -7,7 +8,7 @@ struct Node {
     Node* next;
 };
 
-Node* createNode(const string& value){
+Node* createNode(const string& value) {
     Node* n = new Node();
     n->data = value;
     n->prev = nullptr;
@@ -15,9 +16,9 @@ Node* createNode(const string& value){
     return n;
 }
 
-void displayList(Node* head){
+void displayList(Node* head) {
     Node* current = head;
-    while(current != nullptr){
+    while (current != nullptr) {
         cout << current->data;
         if (current->next != nullptr) {
             cout << " <-> ";
@@ -27,7 +28,16 @@ void displayList(Node* head){
     cout << endl;
 }
 
-int main(){
+void clearList(Node* head) {
+    Node* current = head;
+    while (current != nullptr) {
+        Node* nextNode = current->next;  
+        delete current;                 
+        current = nextNode;             
+    }
+}
+
+int main() {
     Node* a = createNode("Song A");
     Node* b = createNode("Song B");
     Node* c = createNode("Song C");
@@ -45,5 +55,9 @@ int main(){
 
     cout << "List: " << endl;
     displayList(a);
+
+    clearList(a);
+    a = b = c = d = e = nullptr;  
+
     return 0;
 }

@@ -11,4 +11,4 @@
 
 # Note
 
-Pull Request Task 1-2 berada di close dan kami tidak bisa merge pull request karena saling conflict
+Pull Request Task 1-2 berada di close dan kami tidak bisa merge pull request karena saling conflict sehingga harus update manual di main

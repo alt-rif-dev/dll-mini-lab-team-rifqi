@@ -9,3 +9,6 @@
 | 3 | Nayaga Radithya | 103012500072 | Reviewer | @radithyanayaga-byte |
 | 4 | Muhammad Dzaki Lukmanul Hakim | 103012500092 | Documenter | @JQ1017 |
 
+# Note
+
+Pull Request Task 1-2 berada di close dan kami tidak bisa merge pull request karena saling conflict

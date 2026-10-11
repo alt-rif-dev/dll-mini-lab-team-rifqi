@@ -1,4 +1,4 @@
-Name: Rifqi Bhadrika Adwitiya
+## Rifqi Bhadrika Adwitiya
 
 My main contribution: Sebagai Builder di Task 1-2, saya membuat repository tim, menyiapkan struktur folder, menulis README.md, lalu membuat struct Node, fungsi createNode(), membangun list 5 node (Song A sampai Song E), dan menulis displayList(). Saya juga membuka Issue #1 dan Pull Request #2, serta menyelesaikan merge conflict pada README.md.
 
@@ -23,7 +23,7 @@ Resolve README merge conflict
 
 ---
 
-Name: Muhammad Dzaki Lukmanul Hakim
+## Muhammad Dzaki Lukmanul Hakim
 
 My main contribution:
 Sebagai Builder di Task 3-4, saya bertanggung jawab mengimplementasikan logika penelusuran dua arah (Forward dan Backward Traversal) pada repositori tim. Saya menulis fungsi utama untuk mencetak list dari depan ke belakang (`Song A` sampai `Song E`) menggunakan pointer `next` dan fungsi kustom tambahan untuk mencetak secara terbalik dari belakang ke depan menggunakan pointer `prev`.

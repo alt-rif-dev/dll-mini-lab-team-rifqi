@@ -414,7 +414,6 @@ Tes diuji dengan sengaja memasukkan versi delete yang salah (lupa update `prev`)
 
 - Menyalin file ke folder `experiments/` di dalam repo lalu memeriksa dengan `git status`
 - Men-commit perubahan sebelum berpindah branch
-- [CEK: sesuaikan dengan yang benar-benar dilakukan, contoh membuat branch `tester-edge-cases` lalu push ke branch itu, atau `git pull` lalu push]
 - Memastikan `tester.exe` tidak ikut ter-commit
 
 

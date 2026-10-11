@@ -54,7 +54,7 @@ Saya memperbaiki kesalahan perintah Git secara mandiri dengan membuang teks jalu
 
 
 
-## Nayaga 
+## Nayaga Radithya
 
 **Peran:** Builder (Task 5-6) dan Tester (Task 7-9)
 
